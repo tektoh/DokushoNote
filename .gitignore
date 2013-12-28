@@ -1,0 +1,12 @@
+.project
+.DS_Store
+*.swp
+
+app/config/config.php
+app/cache/*
+!app/cache/.gitkeep
+
+log/*
+!log/.gitkeep*.class
+*.pyc
+*.pyo
