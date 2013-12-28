@@ -7,6 +7,8 @@ app/cache/*
 !app/cache/.gitkeep
 
 log/*
-!log/.gitkeep*.class
+!log/.gitkeep
+
+*.class
 *.pyc
 *.pyo
