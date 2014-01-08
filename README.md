@@ -1,2 +1,2 @@
-RDNOTE
+DokushoNote
 ======
