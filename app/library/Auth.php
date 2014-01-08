@@ -1,6 +1,6 @@
 <?php
 
-class MySessionHandler implements implements SessionHandlerInterface
+class MySessionHandler implements SessionHandlerInterface
 {
 	private $config;
 	private $log;
@@ -40,7 +40,7 @@ class MySessionHandler implements implements SessionHandlerInterface
     	$session = new Sessions();
     	$session->id = $id;
     	$session->data = $data;
-    	$session->expires = time() + $this->config->timeout;
+    	$session->expires = time() + $this->config->expires;
     	if ($session->save() == false) {
     		$this->log->error($sessions->getMessages());
     		return false;
@@ -85,5 +85,8 @@ class Auth
 	public function __construct($config) {
 		$this->config = $config;
 		$this->log = new Logger();
+		$handler = new MySessionHandler($config);
+		session_set_save_handler($handler, true);
+		session_start();
 	}
 }
